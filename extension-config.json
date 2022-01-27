@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0-beta.1",
+  "id": "@shopgate-project/product-badges",
+  "components": [
+    {
+      "id": "ProductBadgesEmpty",
+      "path": "frontend/portals/Empty/index.jsx",
+      "type": "portals",
+      "target": [
+        "product.discount",
+        "product-item.discount"
+      ]
+    }, {
+      "id": "ComponentProductBadges",
+      "path": "frontend/portals/ComponentProductBadges",
+      "type": "portals",
+      "target": [
+        "component.product-badges"
+      ]
+    }
+  ],
+  "configuration": {
+    "badges": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": [{
+        "type": "discount",
+        "min": 10
+      }],
+      "params": {
+        "type": "json",
+        "label": "Badge configuration",
+        "required": true
+      }
+    },
+    "maxDisplayCount": {
+      "type": "admin",
+      "default": 10,
+      "destination": "frontend",
+      "params": {
+        "label": "Total badges to display",
+        "description": "The maximum count of displayed badges",
+        "type": "number"
+      }
+    },
+    "showOnPdp": {
+      "type": "admin",
+      "default": true,
+      "destination": "frontend",
+      "params": {
+        "label": "Show badges on Pdp",
+        "type": "checkbox"
+      }
+    },
+    "showOnSliders": {
+      "type": "admin",
+      "default": true,
+      "destination": "frontend",
+      "params": {
+        "label": "Show badges on product sliders",
+        "type": "checkbox"
+      }
+    },
+    "showOnLists": {
+      "type": "admin",
+      "default": true,
+      "destination": "frontend",
+      "params": {
+        "label": "Show badges on product lists (only grids for now)",
+        "type": "checkbox"
+      }
+    },
+    "showOnLiveshopping": {
+      "type": "admin",
+      "default": true,
+      "destination": "frontend",
+      "params": {
+        "label": "Show badges on live shopping",
+        "type": "checkbox"
+      }
+    },
+    "badgeStyle": {
+      "type": "admin",
+      "default": {},
+      "destination": "frontend",
+      "params": {
+        "label": "Css styling for the badge",
+        "type": "json"
+      }
+    }
+  }
+}
