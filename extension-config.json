@@ -24,8 +24,7 @@
       "type": "admin",
       "destination": "frontend",
       "default": [{
-        "type": "discount",
-        "min": 10
+        "type": "discount"
       }],
       "params": {
         "type": "json",
@@ -35,7 +34,7 @@
     },
     "maxDisplayCount": {
       "type": "admin",
-      "default": 10,
+      "default": 3,
       "destination": "frontend",
       "params": {
         "label": "Total badges to display",

@@ -25,7 +25,7 @@ const styles = {
  * @returns {JSX}
  */
 const Badge = ({ badge, location }) => {
-  const { text, style } = badge;
+  const { label, style } = badge;
 
   // Custom class created from badge styles
   const customClass = useMemo(() => {
@@ -42,7 +42,7 @@ const Badge = ({ badge, location }) => {
         className={classNames(styles.badge, {
           [styles.big]: location === BADGES_LOCATION_PDP,
         }, customClass)}
-        text={text}
+        text={label}
       />
     </div>
   );

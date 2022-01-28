@@ -9,15 +9,15 @@ import { badges, maxDisplayCount, badgeStyle } from '../config';
  * @returns {Object|null}
  */
 const createDiscountBadgeData = (badge, discount) => {
-  const { text, min = 1, max = 100 } = badge;
+  const { label, min = 1, max = 100 } = badge;
   // Break if the product discount is not within the desired range
-  if (discount < min || discount > max) {
+  if (!discount || discount < min || discount > max) {
     return null;
   }
 
   // When a text is configured it's used for the badge, otherwise the percentage discount is shown
   return {
-    text: text || `-${discount}%`,
+    label: label || `-${discount}%`,
   };
 };
 
@@ -28,7 +28,7 @@ const createDiscountBadgeData = (badge, discount) => {
  * @returns {Object|null}
  */
 const createPropertyBadgeData = (badge, productProperties) => {
-  const { text, properties = [] } = badge;
+  const { label, properties = [] } = badge;
 
   if (!Array.isArray(productProperties) || !Array.isArray(properties) || !properties.length) {
     // Break when the input data is invalid
@@ -37,7 +37,7 @@ const createPropertyBadgeData = (badge, productProperties) => {
 
   // Check the product properties
   const match = productProperties.find(productProperty => properties.find((property) => {
-    if (text) {
+    if (label) {
       // When a text is configured we search for an exact match of property label and value
       return productProperty.label === property.label && productProperty.value === property.value;
     }
@@ -50,7 +50,7 @@ const createPropertyBadgeData = (badge, productProperties) => {
   }
 
   return {
-    text: text || match.value,
+    label: label || match.value,
   };
 };
 
