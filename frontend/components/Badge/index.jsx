@@ -7,8 +7,8 @@ import { BADGES_LOCATION_PDP } from '../../constants';
 
 const styles = {
   root: css({
-    minWidth: 40,
-    paddingRight: 4,
+    minWidth: 42,
+    marginRight: 4,
   }),
   badge: css({
     paddingLeft: 6,
